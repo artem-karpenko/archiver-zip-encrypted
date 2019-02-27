@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "dependencies": {
     "archiver": "^3.0.0",
-    "mocha": "^6.0.2"
+    "mocha": "^6.0.2",
+    "zip-stream": "latest",
+    "archiver-utils": "latest",
+    "compress-commons": "latest"
   },
   "scripts": {
     "test": "mocha --reporter dot"

@@ -62,3 +62,4 @@ typings/
 
 .idea/
 archiver-zip-aes.iml
+/target/
