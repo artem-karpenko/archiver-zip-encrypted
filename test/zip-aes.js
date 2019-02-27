@@ -2,7 +2,6 @@ const archiver = require('archiver');
 const fs = require('fs');
 const cp = require('child_process');
 const rmrf = require('rimraf');
-const chai = require('chai');
 const should = require('should');
 const path = require('path');
 
