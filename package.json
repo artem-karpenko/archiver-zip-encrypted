@@ -3,10 +3,14 @@
   "version": "0.0.1",
   "dependencies": {
     "archiver": "^3.0.0",
-    "mocha": "^6.0.2",
-    "zip-stream": "latest",
     "archiver-utils": "latest",
-    "compress-commons": "latest"
+    "compress-commons": "latest",
+    "zip-stream": "latest"
+  },
+  "devDependencies": {
+    "mocha": "^6.0.2",
+    "rimraf": "^2.6.3",
+    "should": "^13.2.3"
   },
   "scripts": {
     "test": "mocha --reporter dot"
