@@ -1,0 +1,21 @@
+{
+  "name": "archiver-zip-aes",
+  "version": "0.0.1",
+  "dependencies": {
+    "archiver": "^3.0.0",
+    "mocha": "^6.0.2"
+  },
+  "scripts": {
+    "test": "mocha --reporter dot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artem-karpenko/archiver-zip-aes.git"
+  },
+  "author": "Atrem Karpenko <gooyozh@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artem-karpenko/archiver-zip-aes/issues"
+  },
+  "homepage": "https://github.com/artem-karpenko/archiver-zip-aes#readme"
+}
