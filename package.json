@@ -7,7 +7,8 @@
     "archiver-utils": "latest",
     "compress-commons": "latest",
     "pbkdf2": "^3.0.17",
-    "zip-stream": "latest"
+    "zip-stream": "latest",
+    "crc": "latest"
   },
   "devDependencies": {
     "mocha": "^6.0.2",
