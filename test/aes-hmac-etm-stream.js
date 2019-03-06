@@ -1,6 +1,6 @@
 'use strict';
 
-const AesHmacEtmStream = require('../lib/aes-hmac-etm-stream');
+const AesHmacEtmStream = require('../lib/aes/aes-hmac-etm-stream');
 const fs = require('fs');
 const should = require('should');
 const crypto = require('crypto');
@@ -34,7 +34,7 @@ describe('aes-hmac-etm-stream', () => {
 
             compositeKey.passwordVerifier.should.be.eql(encodedData.slice(16, 18));
 
-            let decipher = crypto.createDecipheriv('aes-256-ctr', compositeKey.aesKey, encodedData.slice(0, 16));
+            let decipher = crypto.createDecipheriv('aes-256-ctr', compositeKey.aesKey, Buffer.from("01000000000000000000000000000000", "hex"));
             let decoded = decipher.update(encodedData.slice(18, encodedData.length - hmacLength));
             decoded = Buffer.concat([decoded, decipher.final()]);
 
