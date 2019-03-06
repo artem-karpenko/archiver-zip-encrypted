@@ -34,5 +34,5 @@ describe('zip-crypto', () => {
                 done();
             });
         });
-    }).timeout(120000);
+    });
 });
