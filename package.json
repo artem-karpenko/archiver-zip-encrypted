@@ -1,14 +1,11 @@
 {
-  "name": "archiver-zip-aes",
+  "name": "archiver-zip-encrypted",
   "version": "0.0.1",
   "dependencies": {
-    "aes-js": "^3.1.2",
     "archiver": "^3.0.0",
     "archiver-utils": "latest",
     "compress-commons": "latest",
-    "pbkdf2": "^3.0.17",
-    "zip-stream": "latest",
-    "crc": "latest"
+    "zip-stream": "latest"
   },
   "devDependencies": {
     "mocha": "^6.0.2",
