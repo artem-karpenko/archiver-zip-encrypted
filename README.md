@@ -1,5 +1,6 @@
 # archiver-zip-encrypted
-Plugin for [archiver](https://www.npmjs.com/package/archiver) which adds encryption capabilities to Zip compression.
+Plugin for [archiver](https://www.npmjs.com/package/archiver) which adds encryption 
+capabilities to Zip compression. Pure JS, no external zip software needed.
 ## Install
 ```npm install archiver-zip-encrypted --save```
 ## Usage
