@@ -5,6 +5,9 @@ const rmrf = require('rimraf');
 const should = require('should');
 const path = require('path');
 
+/**
+ * This test assumes 7-Zip installed in the system and available in path
+ */
 describe('zip-crypto', () => {
     beforeEach(() => {
         rmrf.sync('./target');
@@ -26,7 +29,7 @@ describe('zip-crypto', () => {
         archive.pipe(out);
 
         out.on("close", () => {
-            cp.execFile('7z.exe', ['e', `target${path.sep}test.zip`, '-otarget', '-p123'], (e) => {
+            cp.execFile('7z', ['e', `target${path.sep}test.zip`, '-otarget', '-p123'], (e) => {
                 should.not.exist(e, '7z throws error: ' + e);
                 fs.existsSync('./target/test.txt').should.be.true('Extracted file should exist');
                 fs.readFileSync('./target/test.txt').toString('utf-8').should.be.eql(

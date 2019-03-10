@@ -5,6 +5,9 @@ const rmrf = require('rimraf');
 const should = require('should');
 const path = require('path');
 
+/**
+ * This test assumes 7-Zip installed in the system and available in path
+ */
 describe('zip-aes', () => {
     beforeEach(() => {
         rmrf.sync('./target');
@@ -13,7 +16,7 @@ describe('zip-aes', () => {
 
     it('should pack zip-aes/unpack 7z', (done) => {
         try {
-            archiver.registerFormat('zip-encrypted', require("../lib/zip-encrypted"));
+            archiver.registerFormat('zip-encrypted', require("../"));
         } catch (e) {} // already registered
 
         let archive = archiver.create('zip-encrypted', {zlib: {level: 8}, encryptionMethod: 'aes256', password: '123'});
@@ -26,7 +29,7 @@ describe('zip-aes', () => {
         archive.pipe(out);
 
         out.on("close", () => {
-            cp.execFile('7z.exe', ['e', `target${path.sep}test.zip`, '-otarget', '-p123'], (e) => {
+            cp.execFile('7z', ['e', `target${path.sep}test.zip`, '-otarget', '-p123'], (e) => {
                 should.not.exist(e, '7z throws error: ' + e);
                 fs.existsSync('./target/test.txt').should.be.true('Extracted file should exist');
                 fs.readFileSync('./target/test.txt').toString('utf-8').should.be.eql(
