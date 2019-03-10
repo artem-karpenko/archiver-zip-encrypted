@@ -17,14 +17,14 @@ let archive = archiver.create('zip-encrypted', {zlib: {level: 8}, encryptionMeth
 Plugin supports 2 encryption methods:
 * 'aes256' - this is implementation of AES-256 encryption introduced by WinZip in 2003.
    It is the most safe option in regards of encryption, but limits possibilities of opening resulting archives.
-   It's known to be supported by recent versions 7-Zip and WinZip. It is NOT supported in particular by
+   It's known to be supported by recent versions 7-Zip and WinZip. It is NOT supported by
    Linux unzip 6.00 (by Info-Zip). It is also NOT supported by Windows explorer (i.e. not possible to open Zip file as folder),
    even in Windows 10. 
-* 'zip20' - this is implementation of legacy Zip 2.0 encryption (also mentioned somewhere under ZipCrypto term).
+* 'zip20' - this is implementation of legacy Zip 2.0 encryption (also mentioned somewhere under "ZipCrypto" term).
    This is the first encryption method added to Zip format and hence is widely supported, in particular 
-   by standard tools in Linux and Windows (including explorer). However its security is proven to be breakable
-   so I would not recommend using it, unless you need above mentioned tool support.
+   by standard tools in Linux and Windows. However its security is proven to be breakable
+   so I would not recommend using it, unless you only need to secure files from 
       
-For more information on these encryption methods and its drawbacks in particular see [WinZip documentation](https://www.winzip.com/aes_info.htm)
+For more information on these encryption methods and its drawbacks in particular see [WinZip documentation](http://kb.winzip.com/help/RU/WZ/help_encryption.htm)
 It's worth noting that neither of these encryption methods encrypt file names and their metainformation, 
 such as original size, filesystem dates, permissions etc.
