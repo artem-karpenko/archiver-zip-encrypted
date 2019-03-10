@@ -12,9 +12,11 @@ describe('zip-crypto', () => {
     });
 
     it('should pack zip-crypto/unpack 7z', (done) => {
-        archiver.registerFormat('zip-crypto', require('../')["zip-crypto"]);
+        try {
+            archiver.registerFormat('zip-encrypted', require("../lib/zip-encrypted"));
+        } catch (e) {} // already registered
 
-        let archive = archiver.create('zip-crypto', {zlib:{level:8}, password: '123'});
+        let archive = archiver.create('zip-encrypted', {zlib: {level: 8}, encryptionMethod: 'zip20', password: '123'});
         archive.append(fs.createReadStream('./test/resources/test.txt'), {
             name: 'test.txt'
         });

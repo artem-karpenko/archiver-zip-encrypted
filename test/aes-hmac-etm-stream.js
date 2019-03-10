@@ -19,12 +19,9 @@ describe('aes-hmac-etm-stream', () => {
         let encodedData = Buffer.alloc(0);
         stream.on('data', data => {
             encodedData = Buffer.concat([encodedData, data]);
-            console.log(`encoded received: ${data.toString('utf-8')}`);
         });
 
         stream.on('end', () => {
-            console.log('Encoding completed');
-
             const hmacLength = 10;
 
             encodedData.should.have.length(16 + 2 + data.length + hmacLength);

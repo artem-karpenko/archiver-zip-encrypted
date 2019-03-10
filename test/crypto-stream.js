@@ -2,8 +2,8 @@
 
 const fs = require('fs');
 const should = require('should');
-const CryptoStream = require('../lib/zip-crypto/crypto-stream');
-const DecryptoStream = require('../lib/zip-crypto/decrypto-stream');
+const CryptoStream = require('../lib/zip20/crypto-stream');
+const DecryptoStream = require('../lib/zip20/decrypto-stream');
 
 describe('crypt-stream', () => {
     it('should encrypt and then decrypt stream', (done) => {
@@ -22,10 +22,6 @@ describe('crypt-stream', () => {
                 finalData = Buffer.concat([finalData, data]);
             })
             .on('end', () => {
-                console.log('All completed');
-                console.log(`Original data: ${originalData}`);
-                console.log(`Data after encrypt/decrypt: ${finalData}`);
-
                 finalData.should.eql(originalData);
 
                 done();
