@@ -1,6 +1,6 @@
 {
   "name": "archiver-zip-encrypted",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "archiver": "^3.0.0",
     "archiver-utils": "^2.0.0",
@@ -24,5 +24,6 @@
   "bugs": {
     "url": "https://github.com/artem-karpenko/archiver-zip-encrypted/issues"
   },
-  "homepage": "https://github.com/artem-karpenko/archiver-zip-encrypted#readme"
+  "homepage": "https://github.com/artem-karpenko/archiver-zip-encrypted#readme",
+  "keywords": ["zip", "encryption", "aes256", "archiver"]
 }
