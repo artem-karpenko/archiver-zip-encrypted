@@ -29,6 +29,7 @@
     "zip",
     "encryption",
     "aes",
-    "archiver"
+    "archiver",
+    "password"
   ]
 }
