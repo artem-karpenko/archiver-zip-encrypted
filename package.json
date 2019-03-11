@@ -25,5 +25,10 @@
     "url": "https://github.com/artem-karpenko/archiver-zip-encrypted/issues"
   },
   "homepage": "https://github.com/artem-karpenko/archiver-zip-encrypted#readme",
-  "keywords": ["zip", "encryption", "aes256", "archiver"]
+  "keywords": [
+    "zip",
+    "encryption",
+    "aes256",
+    "archiver"
+  ]
 }
