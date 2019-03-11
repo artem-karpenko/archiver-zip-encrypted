@@ -28,7 +28,7 @@
   "keywords": [
     "zip",
     "encryption",
-    "aes256",
+    "aes",
     "archiver"
   ]
 }
