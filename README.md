@@ -25,10 +25,10 @@ Plugin supports 2 encryption methods:
    It's known to be supported by recent versions 7-Zip and WinZip. It is NOT supported by
    Linux unzip 6.00 (by Info-Zip). It is also NOT supported by Windows explorer (i.e. not possible to open Zip file as folder),
    even in Windows 10. 
-* 'zip20' - this is implementation of legacy Zip 2.0 encryption (also mentioned somewhere under "ZipCrypto" term).
+* 'zip20' - this is implementation of legacy Zip 2.0 encryption (also called "ZipCrypto" in 7-Zip application).
    This is the first encryption method added to Zip format and hence is widely supported, in particular 
    by standard tools in Linux and Windows. However its security is proven to be breakable
-   so I would not recommend using it, unless you only need to secure files from 
+   so I would not recommend using it unless you absolutely have to make it work w/o external software.
       
 For more information on these encryption methods and its drawbacks in particular see [WinZip documentation](http://kb.winzip.com/help/RU/WZ/help_encryption.htm)
 It's worth noting that neither of these encryption methods encrypt file names and their metainformation, 
