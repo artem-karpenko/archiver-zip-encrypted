@@ -61,5 +61,5 @@ typings/
 .next
 
 .idea/
-archiver-zip-aes.iml
+*.iml
 /target/
