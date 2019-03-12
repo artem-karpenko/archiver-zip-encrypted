@@ -1,1 +1,1 @@
-module.exports = require('./lib/zip-encrypted')
+module.exports = require('./lib/zip-encrypted');

@@ -37,6 +37,6 @@ Plugin supports 2 encryption methods:
    by standard tools in Linux and Windows. However its security is proven to be breakable
    so I would not recommend using it unless you absolutely have to make it work w/o external software.
       
-For more information on these encryption methods and its drawbacks in particular see [WinZip documentation](http://kb.winzip.com/help/RU/WZ/help_encryption.htm)
+For more information on these encryption methods and its drawbacks in particular see [WinZip documentation](http://kb.winzip.com/help/RU/WZ/help_encryption.htm).
 It's worth noting that neither of these encryption methods encrypt file names and their metainformation, 
 such as original size, filesystem dates, permissions etc.
