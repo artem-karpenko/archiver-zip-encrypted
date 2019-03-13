@@ -10,11 +10,13 @@
     "zip-stream": "^2.0.1"
   },
   "devDependencies": {
+    "eslint": "^5.15.1",
     "mocha": "^6.0.2",
     "rimraf": "^2.6.3",
     "should": "^13.2.3"
   },
   "scripts": {
+    "pretest": "eslint .",
     "test": "mocha --reporter dot"
   },
   "repository": {
