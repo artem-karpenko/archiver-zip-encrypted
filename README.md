@@ -2,6 +2,8 @@
 
 > AES-256 and legacy Zip 2.0 encryption for Zip files.
 
+[![Build Status](https://travis-ci.org/artem-karpenko/archiver-zip-encrypted.svg?branch=master)](https://travis-ci.org/artem-karpenko/archiver-zip-encrypted)
+
 Plugin for [archiver](https://www.npmjs.com/package/archiver) that adds encryption 
 capabilities to Zip compression. Pure JS, no external zip software needed.
 
@@ -21,6 +23,7 @@ archiver.registerFormat('zip-encrypted', require("archiver-zip-encrypted"));
 
 // create archive and specify method of encryption and password
 let archive = archiver.create('zip-encrypted', {zlib: {level: 8}, encryptionMethod: 'aes256', password: '123'});
+archive.append('File contents', {name: 'file.name'})
 // ... add contents to archive as usual using archiver
 ```
 ## Encryption methods
