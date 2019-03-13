@@ -16,8 +16,10 @@ describe('zip-crypto', () => {
 
     it('should pack zip-crypto/unpack 7z', (done) => {
         try {
-            archiver.registerFormat('zip-encrypted', require("../lib/zip-encrypted"));
-        } catch (e) {} // already registered
+            archiver.registerFormat('zip-encrypted', require('../lib/zip-encrypted'));
+        } catch (e) {
+            // already registered
+        }
 
         let archive = archiver.create('zip-encrypted', {zlib: {level: 8}, encryptionMethod: 'zip20', password: '123'});
         archive.append(fs.createReadStream('./test/resources/test.txt'), {
@@ -28,7 +30,7 @@ describe('zip-crypto', () => {
         let out = fs.createWriteStream('./target/test.zip');
         archive.pipe(out);
 
-        out.on("close", () => {
+        out.on('close', () => {
             cp.execFile('7z', ['e', `target${path.sep}test.zip`, '-otarget', '-p123'], (e) => {
                 should.not.exist(e, '7z throws error: ' + e);
                 fs.existsSync('./target/test.txt').should.be.true('Extracted file should exist');

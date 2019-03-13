@@ -1,12 +1,8 @@
-const ZipEncryptedStream = require('../').ZipEncryptedStream;
 const fs = require('fs');
-const cp = require('child_process');
 const rmrf = require('rimraf');
-const should = require('should');
-const path = require('path');
 const ZipCryptoStream = require('../lib/zip20/zip-crypto-stream');
 
-describe('using as stream', (done) => {
+describe('using as stream', () => {
     beforeEach(() => {
         rmrf.sync('./target');
         fs.mkdirSync('./target', {recursive: true});
@@ -17,5 +13,5 @@ describe('using as stream', (done) => {
             .pipe(new ZipCryptoStream({password: '123', encryptionMethod: 'zip20'}))
             .pipe(fs.createWriteStream('./target/test.zip'))
             .on('finish', done);
-    })
+    });
 });

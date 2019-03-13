@@ -11,8 +11,10 @@ const path = require('path');
 describe('zip-aes', () => {
     before(() => {
         try {
-            archiver.registerFormat('zip-encrypted', require("../"));
-        } catch (e) {} // already registered
+            archiver.registerFormat('zip-encrypted', require('../'));
+        } catch (e) {
+            // already registered
+        }
     });
 
     beforeEach(() => {
@@ -33,7 +35,7 @@ describe('zip-aes', () => {
         let out = fs.createWriteStream('./target/test.zip');
         archive.pipe(out);
 
-        out.on("close", () => {
+        out.on('close', () => {
             cp.execFile('7z', ['e', `target${path.sep}test.zip`, '-otarget', '-p123'], (e) => {
                 should.not.exist(e, '7z throws error: ' + e);
                 fs.existsSync('./target/test.txt').should.be.true('Extracted file should exist');

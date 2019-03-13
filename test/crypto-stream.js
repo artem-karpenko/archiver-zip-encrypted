@@ -1,7 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-const should = require('should');
 const CryptoStream = require('../lib/zip20/crypto-stream');
 const DecryptoStream = require('../lib/zip20/decrypto-stream');
 
@@ -23,8 +22,7 @@ describe('crypt-stream', () => {
             })
             .on('end', () => {
                 finalData.should.eql(originalData);
-
                 done();
-        });
+            });
     });
 });
