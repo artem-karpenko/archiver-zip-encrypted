@@ -9,19 +9,21 @@ const path = require('path');
  * This test assumes 7-Zip installed in the system and available in path
  */
 describe('zip-crypto', () => {
+    before(() => {
+        try {
+            archiver.registerFormat('zip-encrypted', require('../lib/zip-encrypted'));
+        } catch (e) {
+            // already registered
+        }
+    });
+
     beforeEach(() => {
         rmrf.sync('./target');
         fs.mkdirSync('./target', {recursive: true});
     });
 
     it('should pack zip-crypto/unpack 7z', (done) => {
-        try {
-            archiver.registerFormat('zip-encrypted', require('../lib/zip-encrypted'));
-        } catch (e) {
-            // already registered
-        }
-
-        let archive = archiver.create('zip-encrypted', {zlib: {level: 8}, encryptionMethod: 'zip20', password: '123'});
+        let archive = archiver.create('zip-encrypted', {zlib: {level: 8}, encryptionMethod: 'zip20', password: Buffer.from('123')});
         archive.append(fs.createReadStream('./test/resources/test.txt'), {
             name: 'test.txt'
         });
