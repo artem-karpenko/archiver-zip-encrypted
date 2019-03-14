@@ -10,6 +10,7 @@
     "zip-stream": "^2.0.1"
   },
   "devDependencies": {
+    "coveralls": "^3.0.3",
     "eslint": "^5.15.1",
     "mocha": "^6.0.2",
     "nyc": "^13.3.0",
@@ -18,7 +19,8 @@
   },
   "scripts": {
     "pretest": "eslint .",
-    "test": "nyc --reporter=html mocha"
+    "test": "nyc --reporter=html mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
