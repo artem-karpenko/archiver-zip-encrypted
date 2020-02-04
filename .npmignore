@@ -3,3 +3,6 @@
 test
 target
 support
+coverage
+.nyc_output
+*zip
