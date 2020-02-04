@@ -1,5 +1,7 @@
 .idea
 *iml
+.travis.yml
+.eslintrc.js
 test
 target
 support
