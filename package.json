@@ -1,13 +1,12 @@
 {
   "name": "archiver-zip-encrypted",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "AES-256 and legacy Zip 2.0 encryption for Zip files",
   "dependencies": {
     "aes-js": "^3.1.2",
     "archiver": "^3.1.1",
     "archiver-utils": "^2.1.0",
     "compress-commons": "^1.2.2",
-    "express": "^4.17.1",
     "zip-stream": "^2.1.2"
   },
   "devDependencies": {
