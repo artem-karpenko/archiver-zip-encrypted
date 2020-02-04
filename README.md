@@ -20,6 +20,7 @@ npm install archiver-zip-encrypted --save
 const archiver = require('archiver');
 
 // register format for archiver
+// note: only do it once per Node.js process/application, as duplicate registration will throw an error
 archiver.registerFormat('zip-encrypted', require("archiver-zip-encrypted"));
 
 // create archive and specify method of encryption and password
