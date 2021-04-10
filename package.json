@@ -1,27 +1,26 @@
 {
   "name": "archiver-zip-encrypted",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "AES-256 and legacy Zip 2.0 encryption for Zip files",
   "dependencies": {
     "aes-js": "^3.1.2",
     "archiver": "^3.1.1",
     "archiver-utils": "^2.1.0",
     "compress-commons": "^1.2.2",
-    "zip-stream": "^2.1.2"
+    "zip-stream": "^2.1.3"
   },
   "devDependencies": {
-    "coveralls": "^3.0.6",
-    "eslint": "^6.4.0",
-    "mocha": "^6.2.0",
-    "lodash": "^4.17.15",
-    "nyc": "^14.1.1",
-    "rimraf": "^3.0.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.24.0",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
     "should": "^13.2.3"
   },
   "scripts": {
     "pretest": "eslint .",
     "test": "nyc --reporter=html mocha",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov "
   },
   "repository": {
     "type": "git",
