@@ -1,3 +1,9 @@
+## 2.0.0
+
+Update all dependencies to latest. 
+
+Require Node.js 16 or later.
+
 ## 1.0.10
 compress-commons updated to 4.1.1, zip-stream updated to 4.1.0 - see https://github.com/artem-karpenko/archiver-zip-encrypted/pull/28
 

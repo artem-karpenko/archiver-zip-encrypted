@@ -2,9 +2,9 @@ os: linux
 dist: focal
 language: node_js
 node_js:
-  - "12"
-  - "14"
   - "16"
+  - "18"
+  - "20"
 before_install:
   - sudo apt-get install p7zip-full
 after_success: npm run coverage
